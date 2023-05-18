@@ -11317,7 +11317,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   background-color: var(--bs-primary);
   border-radius: 10px;
   transform: scale(1.1);
-  transition: 1.5s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 

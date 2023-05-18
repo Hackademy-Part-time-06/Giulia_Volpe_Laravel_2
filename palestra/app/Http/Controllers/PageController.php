@@ -58,22 +58,23 @@ class PageController extends Controller
     return view('form');
    }
 
-   public function details($name){
+   public function details($ref){
       //dd($name);
       foreach(self::$corsi['Pilates'] as $corso){
-         if($corso['Name'] == $name){
+         if($ref == $corso['Name']){
             return view('details', ['corso'=>$corso]);
          }
       }
       foreach(self::$corsi['Krav Maga'] as $corso){
-         if($corso['Name'] == $name){
+         if($ref == $corso['Name']){
             return view('details', ['corso'=>$corso]);
          }
       }
       foreach(self::$corsi['Hata Yoga'] as $corso){
-         if($corso['Name'] == $name){
+         if($ref == $corso['Name']){
             return view('details', ['corso'=>$corso]);
          }
       }
+      abort(404);
    }
 }
