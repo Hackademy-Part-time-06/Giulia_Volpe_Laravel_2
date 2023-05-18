@@ -9,7 +9,7 @@
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                 <li class="nav-item"><a class="nav-link @if (Route::currentRouteName() == 'homepage') active @endif "href="{{route('homepage')}}">Home</a></li>
                 <li class="nav-item"><a class="nav-link @if (Route::currentRouteName() == 'courses') active @endif"  href="{{route('courses')}}">Corsi</a></li>
-                <li class="nav-item"><a class="nav-link"  href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link @if (Route::currentRouteName() == 'about') active @endif"  href="{{route('about')}}">About</a></li>
                 <li class="nav-item"><a class="nav-link @if (Route::currentRouteName() == 'contacts') active @endif"  href="{{route('contacts')}}">Contatti</a></li>
             </ul>
         </div>

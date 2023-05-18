@@ -74,6 +74,10 @@ class PageController extends Controller
       return view('form');
      }
 
+     public function about(){
+      return view('about');
+     }
+
 
      public function send(Request $request){
          //dd($request->all());
@@ -81,7 +85,8 @@ class PageController extends Controller
          $request->validate([ //valido i dati
             "name" => 'required|string',
             "email" => 'required|email',
-            "phone" => 'required'
+            "phone" => 'required',
+            "message" => 'required|min:10'
          ]);        
          $data =  //dati preparati per l'invio
          [   
