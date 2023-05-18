@@ -14,8 +14,10 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body id="page-top">
+        <x-navbar/>
+        <x-header/>
         {{$slot}}
       
-       
+       <x-footer/>
     </body>
 </html>

@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [PageController::class, 'index'] )->name('homepage');
-Route::get('/i-nostri-corsi', )->name('courses');
+Route::get('/home', [PageController::class, 'index'])->name('homepage');
+Route::get('/i-nostri-corsi', [PageController::class, 'corsi'])->name('courses');
+Route::get('/form-contatti', [PageController::class, 'contatti'])->name('contacts');
 Route::get('/dettagli/{ref}', )->name('detail');
-Route::get('/form-contatti', )->name('contacts');
