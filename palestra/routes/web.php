@@ -20,5 +20,7 @@ Route::get('/', function () {
 
 Route::get('/home', [PageController::class, 'index'])->name('homepage');
 Route::get('/i-nostri-corsi', [PageController::class, 'corsi'])->name('courses');
-Route::get('/form-contatti', [PageController::class, 'contatti'])->name('contacts');
 Route::get('/dettagli/{ref}', [PageController::class, 'details'])->name('detail');
+
+Route::get('/form-contatti', [PageController::class, 'contatti'])->name('contacts');
+Route::post('/send', [PageController::class, 'send'])->name('send');

@@ -7,10 +7,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" @if (Route::currentRoutName() == 'homepage') active @endif href="{{route('homepage')}}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" @if (Route::currentRoutName() == 'courses') active @endif  href="{{route('courses')}}">Corsi</a></li>
+                <li class="nav-item"><a class="nav-link @if (Route::currentRouteName() == 'homepage') active @endif "href="{{route('homepage')}}">Home</a></li>
+                <li class="nav-item"><a class="nav-link @if (Route::currentRouteName() == 'courses') active @endif"  href="{{route('courses')}}">Corsi</a></li>
                 <li class="nav-item"><a class="nav-link"  href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" @if (Route::currentRoutName() == 'contacts') active @endif  href="{{route('contacts')}}">Contatti</a></li>
+                <li class="nav-item"><a class="nav-link @if (Route::currentRouteName() == 'contacts') active @endif"  href="{{route('contacts')}}">Contatti</a></li>
             </ul>
         </div>
     </div>
