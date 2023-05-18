@@ -8,6 +8,7 @@
             <div class="row text-center">
                 <div class="col-md-4 style-card">
                     <a href="{{ route('courses') }}" class="text-dark text-decoration-none">
+                        <img src="http://www.starfitnessroma.it/wp-content/uploads/Strong-2-1200x800-400x284.jpg" class="card-img-top rounded" alt="lezione di pilates">
                         <span class="fa-stack fa-3x">
                             <h3 class="mt-2">Corsi</h3>
                         </span>
@@ -18,6 +19,7 @@
                 </div>
                 <div class="col-md-4 style-card">
                     <a href="{{ route('contacts') }}" class="text-dark text-decoration-none">
+                        <img src="https://www.pinetahotels.it/blog/wp-content/uploads/2019/05/centro-benessere-dolomiti.jpg" class="card-img-top rounded" alt="lezione di pilates">
                         <span class="fa-stack fa-3x">
                             <h3 class="mt-2">Relax</h3>
                         </span>
@@ -27,6 +29,7 @@
                 </div>
                 <div class="col-md-4 style-card">
                     <a href="{{ route('contacts') }}" class="text-dark text-decoration-none">
+                        <img src="http://www.starfitnessroma.it/wp-content/uploads/salapesi-19-1200x800-2-400x284.jpg" class="card-img-top rounded" alt="lezione di pilates">
                         <span class="fa-stack fa-3x">
                             <h3 class="mt-2">Extra</h3>
                         </span>

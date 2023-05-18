@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $corso['Name'] }}</h5>
                     <p class="card-text">{{ $corso['Descrizione'] }}</p>
-                    <a href="{{route('detail', ['ref' => $corso['Name']]) }}" class="btn btn-primary">Di più</a>
+                    <a href="{{route('detail', ['ref' => $corso['slug']]) }}" class="btn btn-primary">Di più</a>
                 </div>
             </div>
         </div>
