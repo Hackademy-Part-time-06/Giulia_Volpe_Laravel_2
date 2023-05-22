@@ -11,11 +11,9 @@
                 <div class="w-100 text-white">
                     <div class="nes-container with-title is-centered">
                         <p class="title text-dark">Generazioni</p>
-                        <button type="button" class="nes-btn is-error "><a href="{{route('gen1.show')}}"
+                        <button type="button" class="nes-btn is-error "><a href="https//:www.google.com"
                                 class="text-decoration-none text-white"> Gen 1</a></button>
-                     
-
-                    </div>
+                  </div>
 
                 </div>
             </div>

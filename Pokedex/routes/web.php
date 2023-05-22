@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('gen1.homepage');
-Route::get('/gen1', [PageController::class, 'showGen1'])->name('gen1.show');
+Route::get('/genuno', [PageController::class, 'showGen1'])->name('gen1.show');

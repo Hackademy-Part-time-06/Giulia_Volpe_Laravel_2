@@ -12,8 +12,15 @@ class PageController extends Controller
     }
 
     public function showGen1(){
-        $gen1 = Http::get('https://pokeapi.co/api/v2/pokemon')->json();
-        dd($gen1);
-        return view('show1', ['pokemon'=> $gen1]);
+
+        $base = 'https://pokeapi.co/api/v2/pokemon/';
+        $pkms = [];       
+        for ($id = 1; $id < 15; $id++) {
+            $response = Http::get($base.$id.'/');
+            $pokemon = $response->json();
+            $pkms[] = $pokemon;
+        }        
+        return view('gen1.show1', ['pokemonList' => $pkms]);
+                     
     }
 }

@@ -6,3 +6,11 @@ nav{
     font-family: 'Press Start 2P', cursive;
     background-color: rgb(206 34 17);
 }
+
+body {
+    background: url('img/sfondo1.webp') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
