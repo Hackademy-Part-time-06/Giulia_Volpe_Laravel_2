@@ -17,7 +17,9 @@
             @if ($poke3['types'][0]['type']['name'] == 'normal') normal @endif
             @if ($poke3['types'][0]['type']['name'] == 'poison') poison @endif
             @if ($poke3['types'][0]['type']['name'] == 'psychic') psychic @endif
-            @if ($poke3['types'][0]['type']['name'] == 'rock') rock @endif">
+            @if ($poke3['types'][0]['type']['name'] == 'rock') rock @endif
+            @if ($poke3['types'][0]['type']['name'] == 'dark') dark @endif
+            @if ($poke3['types'][0]['type']['name'] == 'steel') steel @endif">
                 <div class="card-body p-5 text-center">
                     <h1 class="fw-bold text-white text-center">{{ ucfirst($poke3['name']) }}</h1>
                     <div class="row">

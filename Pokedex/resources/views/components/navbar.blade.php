@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item nes-btn mx-2">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="{{route('gen1.homepage')}}">Home</a>
                 </li>
                 <li class="nav-item nes-btn mx-2">
                     <a class="nav-link" href="#generation">Generations</a>
