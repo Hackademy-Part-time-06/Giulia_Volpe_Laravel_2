@@ -3,49 +3,49 @@
     <main>
         <div class="container">
             <div class="card border-0 shadow my-5 
-            @if ($poke2['types'][0]['type']['name'] == 'fire') fire @endif
-            @if ($poke2['types'][0]['type']['name'] == 'grass') grass @endif
-            @if ($poke2['types'][0]['type']['name'] == 'water') water @endif
-            @if ($poke2['types'][0]['type']['name'] == 'bug') bug @endif
-            @if ($poke2['types'][0]['type']['name'] == 'dragon') dragon @endif
-            @if ($poke2['types'][0]['type']['name'] == 'electric') electric @endif
-            @if ($poke2['types'][0]['type']['name'] == 'fighting') fighting @endif
-            @if ($poke2['types'][0]['type']['name'] == 'flying') flying @endif
-            @if ($poke2['types'][0]['type']['name'] == 'ghost') ghost @endif
-            @if ($poke2['types'][0]['type']['name'] == 'ground') ground @endif
-            @if ($poke2['types'][0]['type']['name'] == 'ice') ice @endif
-            @if ($poke2['types'][0]['type']['name'] == 'normal') normal @endif
-            @if ($poke2['types'][0]['type']['name'] == 'poison') poison @endif
-            @if ($poke2['types'][0]['type']['name'] == 'psychic') psychic @endif
-            @if ($poke2['types'][0]['type']['name'] == 'rock') rock @endif">
+            @if ($poke3['types'][0]['type']['name'] == 'fire') fire @endif
+            @if ($poke3['types'][0]['type']['name'] == 'grass') grass @endif
+            @if ($poke3['types'][0]['type']['name'] == 'water') water @endif
+            @if ($poke3['types'][0]['type']['name'] == 'bug') bug @endif
+            @if ($poke3['types'][0]['type']['name'] == 'dragon') dragon @endif
+            @if ($poke3['types'][0]['type']['name'] == 'electric') electric @endif
+            @if ($poke3['types'][0]['type']['name'] == 'fighting') fighting @endif
+            @if ($poke3['types'][0]['type']['name'] == 'flying') flying @endif
+            @if ($poke3['types'][0]['type']['name'] == 'ghost') ghost @endif
+            @if ($poke3['types'][0]['type']['name'] == 'ground') ground @endif
+            @if ($poke3['types'][0]['type']['name'] == 'ice') ice @endif
+            @if ($poke3['types'][0]['type']['name'] == 'normal') normal @endif
+            @if ($poke3['types'][0]['type']['name'] == 'poison') poison @endif
+            @if ($poke3['types'][0]['type']['name'] == 'psychic') psychic @endif
+            @if ($poke3['types'][0]['type']['name'] == 'rock') rock @endif">
                 <div class="card-body p-5 text-center">
-                    <h1 class="fw-bold text-white text-center">{{ ucfirst($poke2['name']) }}</h1>
+                    <h1 class="fw-bold text-white text-center">{{ ucfirst($poke3['name']) }}</h1>
                     <div class="row">
                         <div class="col-6 col-md-3">
                             <figure class="">
-                                <img src="{{ $poke2['sprites']['front_default'] }}" class="img-fluid bg-white round"
-                                    alt="{{ $poke2['name'] }}">
+                                <img src="{{ $poke3['sprites']['front_default'] }}" class="img-fluid bg-white round"
+                                    alt="{{ $poke3['name'] }}">
                                 <figcaption class="text-white">Normal</figcaption>
                             </figure>
                         </div>
                         <div class="col-6 col-md-3">
                             <figure>
-                                <img src="{{ $poke2['sprites']['back_default'] }}" class="img-fluid bg-white round"
-                                    alt="{{ $poke2['name'] }}">
+                                <img src="{{ $poke3['sprites']['back_default'] }}" class="img-fluid bg-white round"
+                                    alt="{{ $poke3['name'] }}">
                                 <figcaption class="text-white">Normal</figcaption>
                             </figure>
                         </div>
                         <div class="col-6 col-md-3">
                             <figure>
-                                <img src="{{ $poke2['sprites']['front_shiny'] }}" class="img-fluid bg-white round"
-                                    alt="{{ $poke2['name'] }}">
+                                <img src="{{ $poke3['sprites']['front_shiny'] }}" class="img-fluid bg-white round"
+                                    alt="{{ $poke3['name'] }}">
                                 <figcaption class="text-white">Shiny</figcaption>
                             </figure>
                         </div>
                         <div class="col-6 col-md-3">
                             <figure>
-                                <img src="{{ $poke2['sprites']['back_shiny'] }}" class="img-fluid bg-white round"
-                                    alt="{{ $poke2['name'] }}">
+                                <img src="{{ $poke3['sprites']['back_shiny'] }}" class="img-fluid bg-white round"
+                                    alt="{{ $poke3['name'] }}">
                                 <figcaption class="text-white">Shiny</figcaption>
                             </figure>
                         </div>
@@ -56,7 +56,7 @@
                                 <div class="nes-container is-rounded text-white is-dark with-title is-centered">
                                     <h5 class="title">Moves</h5>
                                     <ul class="list-group">
-                                        @foreach ($poke2['moves'] as $key => $move)
+                                        @foreach ($poke3['moves'] as $key => $move)
                                             @if ($key < 4)
                                                 <li class="list-group-item bg-dark text-white">
                                                     {{ $move['move']['name'] }}</li>
@@ -68,7 +68,7 @@
                             <div class="col-12 col-md-4">
                                 <div class="nes-container is-rounded text-white is-dark with-title is-centered">
                                     <h5 class="title">Types</h5>
-                                    @foreach ($poke2['types'] as $key => $type)
+                                    @foreach ($poke3['types'] as $key => $type)
                                         @if ($key < 4)
                                             <li class="list-group-item">{{ $type['type']['name'] }}</li>
                                         @endif
@@ -79,7 +79,7 @@
                                 <div class="nes-container is-rounded text-white is-dark with-title is-centered">
                                     <h5 class="title">Abilities</h5>
                                     <ul class="list-group">
-                                        @foreach ($poke2['abilities'] as $key => $ability)
+                                        @foreach ($poke3['abilities'] as $key => $ability)
                                             @if ($key < 4)
                                                 <li>{{ $ability['ability']['name'] }}</li>
                                             @endif

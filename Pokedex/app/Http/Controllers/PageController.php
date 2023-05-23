@@ -11,9 +11,12 @@ class PageController extends Controller
         $poke = Http::get('https://pokeapi.co/api/v2/pokemon?limit=151')->json();
 
         $poke2 = Http::get('https://pokeapi.co/api/v2/pokemon?offset=151&limit=100
-        ');
+        ')->json();
 
-        return view('gen1.home', ['pokemon'=> $poke['results']], ['poke'=>$poke2['results']]);
+        $poke3 = Http::get('https://pokeapi.co/api/v2/pokemon?offset=251&limit=135
+        ')->json();
+
+        return view('gen1.home', ['pokemon'=> $poke['results'], 'poke2'=>$poke2['results'], 'poke3'=>$poke3['results']]);
     }
 
     public function showGen1($slug){
