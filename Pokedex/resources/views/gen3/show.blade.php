@@ -55,38 +55,52 @@
                     <div class="container">
                         <div class="row z-2 my-5">
                             <div class="col-12 col-md-4">
-                                <div class="nes-container is-rounded text-white is-dark with-title is-centered">
+                                <div class="nes-container is-rounded text-white is-dark with-title is-centered" style="height: 14rem;">
                                     <h5 class="title">Moves</h5>
                                     <ul class="list-group">
                                         @foreach ($poke3['moves'] as $key => $move)
                                             @if ($key < 4)
-                                                <li class="list-group-item bg-dark text-white">
-                                                    {{ $move['move']['name'] }}</li>
+                                                <li class="list-group-item bg-dark text-white p-1">
+                                                    {{ $move['move']['name'] }}
+                                                </li>
                                             @endif
                                         @endforeach
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
-                                <div class="nes-container is-rounded text-white is-dark with-title is-centered">
+                                <div class="nes-container is-rounded text-white is-dark with-title is-centered" style="height: 7rem;">
                                     <h5 class="title">Types</h5>
-                                    @foreach ($poke3['types'] as $key => $type)
-                                        @if ($key < 4)
-                                            <li class="list-group-item">{{ $type['type']['name'] }}</li>
-                                        @endif
-                                    @endforeach
+                                    <ul class="list-group">
+                                        @foreach ($poke3['types'] as $key => $type)
+                                            @if ($key < 4)
+                                                <li class="list-group-item bg-dark text-white p-1" >{{ $type['type']['name'] }}</li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </div>
+                                @if ($poke3['held_items'])
+                                    <div class="nes-container is-rounded text-white is-dark with-title is-centered" style="height: 7rem;">
+                                        <h5 class="title">Items</h5>
+                                        <ul class="list-group">
+                                            @foreach ($poke3['held_items'] as $key => $item)
+                                                @if ($key < 2)
+                                                    <li class="list-group-item bg-dark text-white p-1">{{ $item['item']['name'] }}</li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                             </div>
                             <div class="col-12 col-md-4">
-                                <div class="nes-container is-rounded text-white is-dark with-title is-centered">
+                                <div class="nes-container is-rounded text-white is-dark with-title is-centered" style="height: 14rem;">
                                     <h5 class="title">Abilities</h5>
                                     <ul class="list-group">
                                         @foreach ($poke3['abilities'] as $key => $ability)
                                             @if ($key < 4)
-                                                <li>{{ $ability['ability']['name'] }}</li>
+                                                <li class="list-group-item bg-dark text-white p-1">{{ $ability['ability']['name'] }}</li>
                                             @endif
                                         @endforeach
-
                                     </ul>
                                 </div>
                             </div>
