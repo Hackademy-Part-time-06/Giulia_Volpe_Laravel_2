@@ -11,7 +11,7 @@
                     <a class="nav-link" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item nes-btn mx-2">
-                    <a class="nav-link" href="#generation">Generazioni</a>
+                    <a class="nav-link" href="#generation">Generations</a>
                 </li>
                 <li class="nav-item nes-btn mx-2">
                     <a class="nav-link" href="#">Form</a>
