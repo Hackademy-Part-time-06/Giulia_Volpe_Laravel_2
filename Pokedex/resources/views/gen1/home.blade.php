@@ -21,7 +21,7 @@
                                 <ul class="list-group">
                                     @foreach ($pokemon as $pkm)
                                         <li class="list-group-item text-dark">
-                                            <a href="{{ route('gen1.show', ['name' => $pkm['name']]) }}"
+                                            <a target="_blank" href="{{ route('gen1.show', ['name' => $pkm['name']]) }}"
                                                 class="text-decoration-none text-dark">{{ ucfirst($pkm['name']) }}</a>
                                         </li>
                                     @endforeach
@@ -38,7 +38,7 @@
                                 <ul class="list-group">
                                     @foreach ($poke2 as $pkm)
                                         <li class="list-group-item text-dark">
-                                            <a href="{{route('gen2.show', ['name'=> $pkm['name']])}}"
+                                            <a target="_blank" href="{{route('gen2.show', ['name'=> $pkm['name']])}}"
                                                 class="text-decoration-none text-dark">{{ ucfirst($pkm['name']) }}</a>
                                         </li>
                                     @endforeach
@@ -55,7 +55,7 @@
                                 <ul class="list-group">
                                     @foreach ($poke3 as $pkm)
                                         <li class="list-group-item text-dark">
-                                            <a href="{{route('gen3.show', ['name'=> $pkm['name']])}}"
+                                            <a target="_blank" href="{{route('gen3.show', ['name'=> $pkm['name']])}}"
                                                 class="text-decoration-none text-dark">{{ ucfirst($pkm['name']) }}</a>
                                         </li>
                                     @endforeach
