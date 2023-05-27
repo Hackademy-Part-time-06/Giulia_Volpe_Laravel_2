@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
 class BookRequest extends FormRequest
@@ -21,14 +22,12 @@ class BookRequest extends FormRequest
      */
     public function rules(): array
     {     
-        $request->validate([
-          "title" => 'required|string',
+        return [
+            "title" => 'required|string',
           "author" => 'required|string',
           "pages" => 'required|numeric',
-          "year" => 'required|numeric'
-        ]);
-        return [
-            //
+          "year" => 'required|numeric',
+          "image" => "required|mimes:bmp,png,jpeg,webp"
         ];
     }
 }
