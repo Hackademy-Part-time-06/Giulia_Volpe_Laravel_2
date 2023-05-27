@@ -1,2 +1,15 @@
 @import 'bootstrap';
 
+/* Set a background image by replacing the URL below */
+body {
+    background: url('https://c1.wallpaperflare.com/preview/127/366/443/library-book-bookshelf-read.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+
+  .btn-color{
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  }
