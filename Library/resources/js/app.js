@@ -6,4 +6,4 @@ function hideDiv(){
     successDiv.style.display = 'none';
 }
 
-setTimeout(hideDiv, 5000);
+setTimeout(hideDiv, 3000);
