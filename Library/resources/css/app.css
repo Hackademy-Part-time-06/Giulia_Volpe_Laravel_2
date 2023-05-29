@@ -1,4 +1,7 @@
 @import 'bootstrap';
+@import url('https://fonts.cdnfonts.com/css/berolina');
+
+                
 
 /* Set a background image by replacing the URL below */
 body {
@@ -7,6 +10,7 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    font-family: 'Berolina', sans-serif;                                
   }
 
   .btn-color{

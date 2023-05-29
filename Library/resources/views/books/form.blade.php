@@ -12,7 +12,7 @@
                         </ul>
                     </div>
                 @endif
-                <form method="POST" action="{{ route('books.store') }}" class="w-75 m-5">
+                <form method="POST" action="{{ route('books.store') }}" class="w-75 m-5" enctype="multipart/form-data">
                     @method('POST')
                     @csrf
                     <div class="mb-3">
@@ -56,8 +56,18 @@
                         @enderror
                     </div>
                     <div class="mb-3">
+                        <label for="trama" class="form-label">Trama</label>
+                        <input type="textarea" class="form-control" name="plot" id="trama"
+                            value="{{ old('plot') }}">
+                        @error('name')
+                            <span class="text-danger">
+                                Inserisci una trama valida!
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
                         <label for="image" class="form-label">Importa i tuoi file!</label>
-                        <input type="file" class="form-control" name="image" id="image">
+                        <input type="file" class="form-control" name="image" id="image" >
                         @error('name')
                             <span class="text-danger">
                                 Inserisci un valore numerico obbligatorio!

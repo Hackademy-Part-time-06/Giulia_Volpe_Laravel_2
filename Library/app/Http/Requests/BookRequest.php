@@ -24,10 +24,11 @@ class BookRequest extends FormRequest
     {     
         return [
             "title" => 'required|string',
-          "author" => 'required|string',
-          "pages" => 'required|numeric',
-          "year" => 'required|numeric',
-          "image" => "required|mimes:bmp,png,jpeg,webp"
+            "author" => 'required|string',
+            "pages" => 'required|numeric',
+            "year" => 'required|numeric',
+            "image" => "required",
+            "plot" => ['required', 'string', 'max:600']
         ];
     }
 }

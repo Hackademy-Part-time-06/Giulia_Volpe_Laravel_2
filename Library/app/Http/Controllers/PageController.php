@@ -25,12 +25,19 @@ class PageController extends Controller
       //   "pages" => 'required|numeric',
       //   "year" => 'required|numeric'
       // ]);
+      $file_path = "";
+      if($request->file('image') && $request->file('image')->isValid()){
+        $file_name = $request->file('image')->getClientOriginalName();
+        $file_path = $request->file('image')->storeAs('public/image', $file_name);
+      }
 
       Book::create([
         'title' => $request->title,
         'author' => $request->author,
         'pages' => $request->pages,
-        'year' => $request->year
+        'year' => $request->year,
+        'image' => $file_path,
+        'plot' => $request->plot
       ]);
       
       return redirect()->route('books.home')->with('success', 'Creazione avvenuta con successo!');
