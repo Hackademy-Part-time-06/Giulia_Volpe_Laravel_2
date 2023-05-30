@@ -8,13 +8,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{{route('books.home')}}">Home</a>
+            <a class="nav-link text-dark fs-5" href="{{route('books.home')}}">Libri</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('books.create')}}">Form</a>
+            <a class="nav-link text-dark fs-5" href="{{route('category.home')}}">Categorie</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link text-dark fs-5" href="{{route('books.create')}}">Aggiungi libri</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark fs-5" href="{{route('category.create')}}">Aggiungi categorie</a>
           </li>
         </ul>
       </div>

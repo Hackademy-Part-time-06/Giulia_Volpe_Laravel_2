@@ -7,7 +7,10 @@
                     <div class="d-flex justify-content-end">
                         <button class="btn btn-color" type="button"><a class="text-decoration-none fw-bold text-white"
                                 href="{{ route('books.create') }}"> Aggiungi un libro</a></button>
+                        <button class="btn btn-color mx-2" type="button"><a class="text-decoration-none fw-bold text-white"
+                                href="{{ route('category.create') }}"> Aggiungi una categoria</a></button>
                     </div>
+
                     <div id="success-message">
                         @if (session('success'))
                             <h4 class="fw-bold text-success">Salvato correttamente!</h4>
