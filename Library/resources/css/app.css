@@ -10,10 +10,11 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    font-family: 'Berolina', sans-serif;                                
+    font-family: 'Berolina', sans-serif;      
+    color: black;                          
   }
 
-  .btn-color{
-    background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  li{
+    list-style: none;
   }
+

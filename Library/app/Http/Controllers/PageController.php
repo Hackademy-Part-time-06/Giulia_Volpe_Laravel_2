@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BookRequest;
 use App\Models\Book;
+use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+
+  public function __construct(){
+    $this->middleware('auth')->except('index', 'show');
+  }
     public function index(){
         $books = Book::all();
         return view('books.home', ['books' => $books]);
@@ -44,7 +49,7 @@ class PageController extends Controller
 
     }
 
-    public function show(Book $book){
+    public function show(Book $book){ 
 
     return view('books.show', compact('book'));
     }

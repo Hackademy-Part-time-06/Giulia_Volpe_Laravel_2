@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\Authenticate;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth')->except('show', 'index');
+      }
     public function index(){
         $category = Category::all();
         return view('category.homepage', ['categories'=> $category]);
