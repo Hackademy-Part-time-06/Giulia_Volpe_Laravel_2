@@ -5,21 +5,35 @@
             <div class="card border-0 shadow my-5">
                 <div class="card-body p-5">
                     <div class="d-flex justify-content-end">
-                        <a class="text-decoration-none fw-bold btn btn-dark mx-3" href="{{ route('books.create') }}"> Aggiungi un libro</a>
-                        <a class="text-decoration-none fw-bold btn btn-outline-dark" href="{{ route('category.create') }}"> Aggiungi una categoria</a>
+                        <a class="text-decoration-none fw-bold btn btn-dark mx-3" href="{{ route('books.create') }}">
+                            Aggiungi un libro</a>
+                        <a class="text-decoration-none fw-bold btn btn-outline-dark"
+                            href="{{ route('category.create') }}"> Aggiungi una categoria</a>
                     </div>
 
                     <div id="success-message">
                         @if (session('success'))
-                            <h4 class="fw-bold text-success">Salvato correttamente!</h4>
+                            <h4 class="fw-bold bg-success opacity-75 text-white">{{ session('success') }}</h4>
                         @endif
                     </div>
                     <h1 class="fw-light text-center">I miei libri</h1>
                     <ul class="list-group list-group-flush">
                         @foreach ($books as $book)
-                            <li class="list-group-item fs-5"> <a class="text-decoration-none text-dark"
-                                    href="{{ route('books.show', ['book' => $book['id']]) }}"
-                                    target="_blank">{{ $book['title'] }} - {{ $book['author'] }}</a></li>
+                            <div class="row ">
+                                <li class="my-2">
+                                    {{ $book->title }} - {{ $book->author }}
+                                    @auth
+                                         <a class="btn btn-dark float-end mx-2" onclick="event.preventDefault(); document.querySelector('#delete-{{$book['id']}}').submit();">Elimina</a>
+                                    <form action="{{route('books.destroy', ['book' => $book['id']])}}" method="POST" id="delete-{{$book['id']}}" class="d-none"> 
+                                        @csrf
+                                        @method('DELETE')</form>
+                                    <a href="{{ route('books.edit', ['book' => $book['id']]) }}"
+                                        class="btn btn-dark float-end mx-2">Modifica</a>
+                                    @endauth                                   
+                                    <a href="{{ route('books.show', ['book' => $book['id']]) }}"
+                                        class="btn btn-dark float-end mx-2">Dettagli</a>
+                                </li>
+                            </div>
                         @endforeach
                     </ul>
                 </div>

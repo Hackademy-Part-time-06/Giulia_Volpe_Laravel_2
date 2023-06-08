@@ -2,17 +2,16 @@
 
 namespace App\Http\Requests;
 
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class BookRequest extends FormRequest
+class StoreAuthorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -21,14 +20,9 @@ class BookRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
     public function rules(): array
-    {     
+    {
         return [
-            "title" => 'required|string',
-            "author" => 'required|string',
-            "pages" => 'required|numeric',
-            "year" => 'required|numeric',
-            "image" => "",
-            "plot" => ['required', 'string', 'max:600']
+            //
         ];
     }
 }

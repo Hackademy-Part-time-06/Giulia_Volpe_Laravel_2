@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
 
     public function __construct(){
-        $this->middleware('auth')->except('show', 'index');
+       $this->middleware('auth')->except('show', 'index');
       }
     public function index(){
         $category = Category::all();
@@ -34,4 +34,27 @@ class CategoryController extends Controller
     public function show(Category $category){
         return view('category.show', compact('category'));
     }
+
+    public function edit(Category $category){
+
+        return view('category.edit', ['category' => $category]);
+      }
+  
+      public function update(CategoryRequest $request, Category $category){
+    
+      $category->update([
+        "name" => $request->name,
+
+    ]);
+  
+        return redirect()->route('category.home')->with('success', 'Modifica avvenuta con successo!');
+  
+      }
+  
+      public function destroy(Category $category){
+  
+        $category->delete();
+  
+        return redirect()->route('category.home')->with('success', 'Cancellazione avvenuta con successo!');
+      }
 }
