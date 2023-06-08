@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,10 @@ Route::get('/categorie/{category}/dettagli', [CategoryController::class, 'show']
 Route::get('/categorie/{category}/modifica', [CategoryController::class, 'edit'])->name('category.edit');
 Route::put('/categorie/{category}/edit', [CategoryController::class, 'update'])->name('category.update');
 Route::delete('/categorie/{category}', [CategoryController::class, 'destroy'])->name('category.destroy');
+
+//rotte autore
+
+Route::resource('author', AuthorController::class);
 
 
 

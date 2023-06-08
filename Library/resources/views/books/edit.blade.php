@@ -16,7 +16,7 @@
                     @method('PUT')
                     @csrf
                     <div class="mb-3">
-                        <label for="titolo" class="form-label"></label>
+                        <label for="titolo" class="form-label">Titolo</label>
                         <input type="text" class="form-control" name="title" id="titolo"
                             value="{{ $book->title }}">
                         @error('name')
@@ -26,7 +26,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="autore" class="form-label"></label>
+                        <label for="autore" class="form-label">Autore</label>
                         <input type="text" class="form-control" name="author" id="autore"
                             value="{{ $book->author }}">
                         @error('name')
@@ -36,7 +36,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="pagine" class="form-label"></label>
+                        <label for="pagine" class="form-label">Pagine</label>
                         <input type="number" class="form-control" name="pages" id="pagine"
                             value="{{ $book->pages }}">
                         @error('name')
@@ -46,7 +46,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="anno" class="form-label"></label>
+                        <label for="anno" class="form-label">Anno di uscita</label>
                         <input type="number" class="form-control" name="year" id="anno"
                             value="{{ $book->year }}">
                         @error('name')
@@ -56,7 +56,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="trama" class="form-label"></label>
+                        <label for="trama" class="form-label">Trama</label>
                         <input type="textarea" class="form-control" name="plot" id="trama"
                             value="{{ $book->plot }}">
                         @error('name')
@@ -74,7 +74,9 @@
                             </span>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">Modifica!</button>
+                    <button type="submit" class="btn btn-dark">Modifica!</button>
+                    <button type="reset" class="btn btn-outline-danger">Reset</button>
+                    <a href="{{route('books.home')}}" class="btn btn-outline-dark">Torna indietro</a>
                 </form>
             </div>
         </div>

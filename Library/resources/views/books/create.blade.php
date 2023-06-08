@@ -74,7 +74,9 @@
                             </span>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">Invia!</button>
+                    <button type="submit" class="btn btn-dark">Invia!</button>
+                    <button type="reset" class="btn btn-outline-danger">Reset</button>
+                    <a href="{{route('books.home')}}" class="btn btn-outline-dark">Torna indietro</a>
                 </form>
             </div>
         </div>

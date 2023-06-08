@@ -30,11 +30,22 @@
                          </li>
                      </ul>
                  </li>
+                 <li class="nav-item dropdown mx-3">
+                    <a class="nav-link text-dark fs-5" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Autori
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('author.index') }}">Autori</a></li>
+                        <li><a class="dropdown-item" href="{{ route('author.create') }}">Aggiungi un autore</a>
+                        </li>
+                    </ul>
+                </li>
                  @auth
                      <li class="nav-item dropdown mx-3">
                          <a class="nav-link  text-dark fs-5" href="#" role="button"
                              data-bs-toggle="dropdown" aria-expanded="false">
-                             Benvenuto {{ Auth::user()->name }}
+                             Benvenuto  <span class="m-1">{{ Auth::user()->name }}</span>
                          </a>
                          <ul class="dropdown-menu">
                              <li><a class="dropdown-item" href="{{ route('register') }}"></a></li>

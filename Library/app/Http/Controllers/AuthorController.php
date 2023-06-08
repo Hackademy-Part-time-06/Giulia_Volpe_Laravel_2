@@ -15,7 +15,7 @@ class AuthorController extends Controller
     {
         $authors = Author::all();
         
-        return view('author.home', ['authors' => $authors]);
+        return view('author.index', ['authors' => $authors]);
     }
 
     /**
@@ -36,7 +36,7 @@ class AuthorController extends Controller
             'surname' =>$request->surname,
             'birthday' =>$request->birthday
         ]);
-        return redirect()->route('author.home')->with('success', 'Creazione avvenuta con successo!');
+        return redirect()->route('author.index')->with('success', 'Creazione avvenuta con successo!');
     }
 
     /**
@@ -65,7 +65,7 @@ class AuthorController extends Controller
             'surname' =>$request->surname,
             'birthday' =>$request->birthday
         ]);
-        return redirect()->route('author.home')->with('success', 'Modifica avvenuta con successo!');
+        return redirect()->route('author.index')->with('success', 'Modifica avvenuta con successo!');
     }
 
     /**
@@ -75,6 +75,6 @@ class AuthorController extends Controller
     {
         $author->delete();
 
-        return redirect()->route('author.home')->with('success', 'Cancellazione avvenuta con successo!');
+        return redirect()->route('author.index')->with('success', 'Cancellazione avvenuta con successo!');
     }
 }
