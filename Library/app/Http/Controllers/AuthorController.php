@@ -13,7 +13,9 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        $authors = Author::all();
+        
+        return view('author.home', ['authors' => $authors]);
     }
 
     /**
@@ -21,7 +23,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('author.create');
     }
 
     /**
@@ -29,7 +31,12 @@ class AuthorController extends Controller
      */
     public function store(StoreAuthorRequest $request)
     {
-        //
+        Author::create([
+            'name' => $request->name,
+            'surname' =>$request->surname,
+            'birthday' =>$request->birthday
+        ]);
+        return redirect()->route('author.home')->with('success', 'Creazione avvenuta con successo!');
     }
 
     /**
@@ -37,7 +44,7 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        //
+        return view('author.show', compact('author'));
     }
 
     /**
@@ -45,7 +52,7 @@ class AuthorController extends Controller
      */
     public function edit(Author $author)
     {
-        //
+        return view('author.edit', ['author' => $author]);
     }
 
     /**
@@ -53,7 +60,12 @@ class AuthorController extends Controller
      */
     public function update(UpdateAuthorRequest $request, Author $author)
     {
-        //
+        $author->update([
+            'name' => $request->name,
+            'surname' =>$request->surname,
+            'birthday' =>$request->birthday
+        ]);
+        return redirect()->route('author.home')->with('success', 'Modifica avvenuta con successo!');
     }
 
     /**
@@ -61,6 +73,8 @@ class AuthorController extends Controller
      */
     public function destroy(Author $author)
     {
-        //
+        $author->delete();
+
+        return redirect()->route('author.home')->with('success', 'Cancellazione avvenuta con successo!');
     }
 }
