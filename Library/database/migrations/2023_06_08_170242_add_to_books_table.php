@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->text('plot')->after('year');
+            $table->string('image');
+            $table->longText('plot');
+            $table->integer('pages');
+            $table->integer('year');
+            
         });
     }
 
@@ -22,7 +26,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('books', function (Blueprint $table) {
+            $table->dropColumn('image');
             $table->dropColumn('plot');
+            $table->dropColumn('pages');
+            $table->dropColumn('year');
         });
     }
 };

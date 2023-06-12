@@ -26,9 +26,19 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="autore" class="form-label">Autore</label>
+                        <label for="author_id" class="form-label">Autori</label>
+                        <select name="author_id" id="author_id" class="form-control">
+                              @forelse ($authors as $author)
+                             <option value="{{ $author->id }}">{{ $author->name . ' ' . $author->surname }}</option>
+                        @empty
+                            Nessun autore
+                        @endforelse
+                        </select>
+                      
+                       
+                        {{-- <label for="autore" class="form-label">Autore</label>
                         <input type="text" class="form-control" name="author" id="autore"
-                            value="{{ old('author') }}">
+                            value="{{ old('author') }}"> --}}
                         @error('name')
                             <span class="text-danger">
                                 Inserisci un valore obbligatorio!

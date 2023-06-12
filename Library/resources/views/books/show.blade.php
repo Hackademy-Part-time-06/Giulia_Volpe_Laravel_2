@@ -8,7 +8,7 @@
                         <img class="img-fluid" style="height: 24rem;" src="{{Storage::url($book->image)}}" alt="">
                     </div>
                     <div class="col-12 col-md-4 text-wrap">
-                       <h3>Autore: {{$book->author}}</h3>
+                       <h3>Autore: {{$book->author->name}}{{$book->author->surname}}</h3>
                        <h5 class="fw-bold">Trama</h5>
                        <p class="lh-base">{{$book->plot}}</p>
                        <span><strong> Pagine:</strong> {{$book->pages}}</span>

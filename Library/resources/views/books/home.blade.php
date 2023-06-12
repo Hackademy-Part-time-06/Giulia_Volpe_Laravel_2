@@ -19,9 +19,10 @@
                     <h1 class="fw-light text-center">I miei libri</h1>
                     <ul class="list-group list-group-flush">
                         @foreach ($books as $book)
+                      
                             <div class="row ">
                                 <li class="my-2">
-                                    {{ $book->title }} - {{ $book->author }}
+                                    {{ $book->title }} - {{ $book->author->name }} {{$book->author->surname}}
                                     @auth
                                          <a class="btn btn-dark float-end mx-2" onclick="event.preventDefault(); document.querySelector('#delete-{{$book['id']}}').submit();">Elimina</a>
                                     <form action="{{route('books.destroy', ['book' => $book['id']])}}" method="POST" id="delete-{{$book['id']}}" class="d-none"> 

@@ -24,7 +24,7 @@ class BookRequest extends FormRequest
     {     
         return [
             "title" => 'required|string',
-            "author" => 'required|string',
+            "author_id" => 'required|string',
             "pages" => 'required|numeric',
             "year" => 'required|numeric',
             "plot" => ['required', 'string', 'max:600']

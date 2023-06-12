@@ -26,9 +26,13 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="autore" class="form-label">Autore</label>
-                        <input type="text" class="form-control" name="author" id="autore"
-                            value="{{ $book->author }}">
+                        <select name="author_id" id="author_id" class="form-control">
+                            @forelse ($authors as $author)
+                           <option value="{{ $author->name . ' ' . $author->surname }}">{{ $author->name . ' ' . $author->surname }}</option>
+                      @empty
+                          Nessun autore
+                      @endforelse
+                      </select>
                         @error('name')
                             <span class="text-danger">
                                 Inserisci un autore valido!

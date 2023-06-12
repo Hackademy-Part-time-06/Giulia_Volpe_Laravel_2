@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->string('image')->after('year')->nullable();
+            $table->foreignId('author_id')->constrained();
         });
     }
 
@@ -22,7 +22,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('books', function (Blueprint $table) {
-            //
+            $table->dropForeign(['author_id']);
+            $table->dropColumn('author_id');
         });
     }
 };

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BookRequest;
+use App\Models\Author;
 use App\Models\Book;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class PageController extends Controller
     }
 
     public function create(){
-        return view('books.create');
+      $authors = Author::all();
+        return view('books.create', ['authors' => $authors]);
 
     }
  
@@ -38,7 +40,7 @@ class PageController extends Controller
 
       Book::create([
         'title' => $request->title,
-        'author' => $request->author,
+        'author_id' => $request->author_id,
         'pages' => $request->pages,
         'year' => $request->year,
         'image' => $file_path,
@@ -55,8 +57,8 @@ class PageController extends Controller
     }
 
     public function edit(Book $book){
-
-      return view('books.edit', ['book' => $book]);
+      $authors = Author::all();
+      return view('books.edit', ['book' => $book],['authors' => $authors]);
     }
 
     public function update(BookRequest $request, Book $book){
