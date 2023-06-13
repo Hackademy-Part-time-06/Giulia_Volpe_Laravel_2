@@ -19,7 +19,7 @@
                         @foreach ($authors as $author)
                             <div class="row ">
                                 <li class="my-2">
-                                    {{ $author->name }} - {{ $author->surname }}
+                                    {{ $author->name }}  {{ $author->surname }}
                                     @auth
                                          <a class="btn btn-dark float-end mx-2" onclick="event.preventDefault(); document.querySelector('#delete-{{$author['id']}}').submit();">Elimina</a>
                                     <form action="{{route('author.destroy', ['author' => $author['id']])}}" method="POST" id="delete-{{$author['id']}}" class="d-none"> 

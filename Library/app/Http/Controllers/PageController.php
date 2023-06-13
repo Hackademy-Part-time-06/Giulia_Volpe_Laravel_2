@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BookRequest;
 use App\Models\Author;
 use App\Models\Book;
+use App\Models\User;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -15,12 +17,20 @@ class PageController extends Controller
     $this->middleware('auth')->except('index', 'show');
   }
     public function index(){
+
+      if(Auth::user()){
+        $books = Book::where('user_id', Auth::user()->id)->get();
+      }
+      else{
         $books = Book::all();
+      }
+        
         return view('books.home', ['books' => $books]);
     }
 
     public function create(){
       $authors = Author::all();
+      
         return view('books.create', ['authors' => $authors]);
 
     }
@@ -44,7 +54,8 @@ class PageController extends Controller
         'pages' => $request->pages,
         'year' => $request->year,
         'image' => $file_path,
-        'plot' => $request->plot
+        'plot' => $request->plot,
+        'user_id' => Auth::user()->id
       ]);
       
       return redirect()->route('books.home')->with('success', 'Creazione avvenuta con successo!');

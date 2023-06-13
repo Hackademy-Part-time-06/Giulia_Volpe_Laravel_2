@@ -37,7 +37,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="birthday" class="form-label">Nascita</label>
-                        <input type="datetime-local" class="form-control" name="birthday" id="birthday"
+                        <input type="date" class="form-control" name="birthday" id="birthday"
                             value="{{ old('birthday') }}">
                         @error('birthday')
                             <span class="text-danger">
