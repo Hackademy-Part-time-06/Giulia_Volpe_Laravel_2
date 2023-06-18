@@ -4,6 +4,15 @@
         <div class="container">
             <div class="card border-0 shadow my-5">
                 <div class="card-body p-5">
+                    <div>
+                        <form action="{{route('books.search')}}" method="POST" role="search">
+                            @csrf
+                            @method('POST')
+                            <input class="form-control me-2 w-25 d-inline" type="search" placeholder="Search">
+                            <button class="btn btn-outline-success " type="submit">Search</button>
+
+                        </form>
+                    </div>
                     <div class="d-flex justify-content-end">
                         <a class="text-decoration-none fw-bold btn btn-dark mx-3" href="{{ route('books.create') }}">
                             Aggiungi un libro</a>

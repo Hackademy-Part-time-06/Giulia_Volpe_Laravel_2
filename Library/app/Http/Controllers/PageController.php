@@ -15,7 +15,7 @@ class PageController extends Controller
 {
 
   public function __construct(){
-    $this->middleware('auth')->except('index', 'show');
+    $this->middleware('auth')->except('index', 'show', 'search');
   }
     public function index(){
 
@@ -110,5 +110,11 @@ class PageController extends Controller
       return redirect()->route('books.home')->with('success', 'Cancellazione avvenuta con successo!');
     }
 
+
+    public function search(Request $request){
+        $filter_books = Book::where('title', 'like', '%' . $request->search . '%')->get();
+
+        return view('books.home', ['books' => $filter_books]);
+    }
     
 }

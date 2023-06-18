@@ -26,6 +26,8 @@ Route::get('/libri/{book}/modifica', [PageController::class, 'edit'])->name('boo
 Route::put('/libri/{book}/edit', [PageController::class, 'update'])->name('books.update');
 Route::delete('/libri/{book}', [PageController::class, 'destroy'])->name('books.destroy');
 
+Route::post('/libri/search', [PageController::class, 'search'])->name('books.search');
+
 //rotte categorie
 
 Route::get('/categorie', [CategoryController::class, 'index'])->name('category.home');
