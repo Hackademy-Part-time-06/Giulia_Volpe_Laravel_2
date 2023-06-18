@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BookRequest;
 use App\Models\Author;
 use App\Models\Book;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
@@ -30,8 +31,9 @@ class PageController extends Controller
 
     public function create(){
       $authors = Author::all();
+      $categories = Category::all();
       
-        return view('books.create', ['authors' => $authors]);
+        return view('books.create', compact('authors', 'categories'));
 
     }
  
@@ -48,7 +50,7 @@ class PageController extends Controller
         $file_path = $request->file('image')->storeAs('public/image', $file_name);
       }
 
-      Book::create([
+      $data = Book::create([
         'title' => $request->title,
         'author_id' => $request->author_id,
         'pages' => $request->pages,
@@ -58,6 +60,7 @@ class PageController extends Controller
         'user_id' => Auth::user()->id
       ]);
       
+      $data->categories()->attach($request->categories);
       return redirect()->route('books.home')->with('success', 'Creazione avvenuta con successo!');
 
     }
@@ -69,7 +72,8 @@ class PageController extends Controller
 
     public function edit(Book $book){
       $authors = Author::all();
-      return view('books.edit', ['book' => $book],['authors' => $authors]);
+      $categories = Category::all();
+      return view('books.edit', compact('book', 'authors', 'categories'));
     }
 
     public function update(BookRequest $request, Book $book){
@@ -89,6 +93,11 @@ class PageController extends Controller
         'image' => $file_path,
         'plot' => $request->plot
       ]);
+
+      $book->categories()->detach(); // stacco i valori per aggiornare la checkbox
+      $book->categories()->attach($request->categories); // faccio in modo che i valori nuovi vengano valorizzati
+
+     // $book->categories()->sync($request->categories); //Metodo 2 in 1
 
       return redirect()->route('books.home')->with('success', 'Modifica avvenuta con successo!');
 

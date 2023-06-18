@@ -12,6 +12,10 @@
                         </ul>
                     </div>
                 @endif
+
+                <!--INIZIO FORM-->
+
+                <!--titolo-->
                 <form method="POST" action="{{ route('books.store') }}" class="w-75 m-5" enctype="multipart/form-data">
                     @method('POST')
                     @csrf
@@ -25,25 +29,35 @@
                             </span>
                         @enderror
                     </div>
+
+                    <!--autore-->
+
                     <div class="mb-3">
-                        <label for="author_id" class="form-label">Autori</label>
+                        <label for="author_id" class="form-label">Autore</label>
                         <select name="author_id" id="author_id" class="form-control">
-                              @forelse ($authors as $author)
-                             <option value="{{ $author->id }}">{{ $author->name . ' ' . $author->surname }}</option>
-                        @empty
-                            Nessun autore
-                        @endforelse
+                            @forelse ($authors as $author)
+                                <option value="{{ $author->id }}">{{ $author->name . ' ' . $author->surname }}
+                                </option>
+                            @empty
+                                Nessun autore
+                            @endforelse
                         </select>
-                      
+
+                        <!--categorie-->
+                        @forelse ($categories as $category)
                        
-                        {{-- <label for="autore" class="form-label">Autore</label>
-                        <input type="text" class="form-control" name="author" id="autore"
-                            value="{{ old('author') }}"> --}}
-                        @error('name')
-                            <span class="text-danger">
-                                Inserisci un valore obbligatorio!
-                            </span>
-                        @enderror
+                            <div class="form-check">
+                                <label for="categories-{{$category->id}}" class="form-label">{{$category->name}}</label>
+                                <input class="form-check-input" type="checkbox" value="{{$category->id}}" id="categories-{{$category->id}}"
+                                    name="categories[]">
+                            </div>
+                        @empty
+                            Sorry, nessuna categoria
+                        @endforelse
+
+
+
+                        <!--pagine-->
                     </div>
                     <div class="mb-3">
                         <label for="pagine" class="form-label">Pagine</label>
@@ -55,6 +69,8 @@
                             </span>
                         @enderror
                     </div>
+
+                    <!--anno di uscita-->
                     <div class="mb-3">
                         <label for="anno" class="form-label">Anno</label>
                         <input type="number" class="form-control" name="year" id="anno"
@@ -65,6 +81,8 @@
                             </span>
                         @enderror
                     </div>
+
+                    <!--trama-->
                     <div class="mb-3">
                         <label for="trama" class="form-label">Trama</label>
                         <input type="textarea" class="form-control" name="plot" id="trama"
@@ -75,18 +93,22 @@
                             </span>
                         @enderror
                     </div>
+
+                    <!--img-->
                     <div class="mb-3">
                         <label for="image" class="form-label">Importa i tuoi file!</label>
-                        <input type="file" class="form-control" name="image" id="image" >
+                        <input type="file" class="form-control" name="image" id="image">
                         @error('name')
                             <span class="text-danger">
                                 Inserisci un valore numerico obbligatorio!
                             </span>
                         @enderror
                     </div>
+
+                    <!--buttons-->
                     <button type="submit" class="btn btn-dark">Invia!</button>
                     <button type="reset" class="btn btn-outline-danger">Reset</button>
-                    <a href="{{route('books.home')}}" class="btn btn-outline-dark">Torna indietro</a>
+                    <a href="{{ route('books.home') }}" class="btn btn-outline-dark">Torna indietro</a>
                 </form>
             </div>
         </div>
